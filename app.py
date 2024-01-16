@@ -9,9 +9,12 @@ Please refer to these links below for more information:
 
 from dataclasses import asdict
 
+from modelscope import AutoModelForCausalLM, AutoTokenizer
+#from modelscope import GenerationConfig
+
 import streamlit as st
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+#from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.utils import logging
 
 from tools.transformers.interface import GenerationConfig, generate_interactive
@@ -26,11 +29,11 @@ def on_btn_click():
 @st.cache_resource
 def load_model():
     model = (
-        AutoModelForCausalLM.from_pretrained("./shishen", trust_remote_code=True)
+        AutoModelForCausalLM.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen", trust_remote_code=True)
         .to(torch.bfloat16)
         .cuda()
     )
-    tokenizer = AutoTokenizer.from_pretrained("./shishen", trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen", trust_remote_code=True)
     return model, tokenizer
 
 
