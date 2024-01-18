@@ -114,7 +114,7 @@ def main():
                 message_placeholder.markdown(cur_response + "▌")
             message_placeholder.markdown(cur_response)
         # Add robot response to chat history
-        st.session_state.messages.append({"role": "robot", "content": cur_response, "avatar": robot_avator})
+        #st.session_state.messages.append({"role": "robot", "content": cur_response, "avatar": robot_avator})
         torch.cuda.empty_cache()
 
 
