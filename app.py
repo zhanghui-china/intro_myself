@@ -29,11 +29,11 @@ def on_btn_click():
 @st.cache_resource
 def load_model():
     model = (
-        AutoModelForCausalLM.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen2", trust_remote_code=True)
+        AutoModelForCausalLM.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen", trust_remote_code=True)
         .to(torch.bfloat16)
         .cuda()
     )
-    tokenizer = AutoTokenizer.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen2", trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen", trust_remote_code=True)
     return model, tokenizer
 
 
@@ -114,7 +114,7 @@ def main():
                 message_placeholder.markdown(cur_response + "▌")
             message_placeholder.markdown(cur_response)
         # Add robot response to chat history
-        #st.session_state.messages.append({"role": "robot", "content": cur_response, "avatar": robot_avator})
+        st.session_state.messages.append({"role": "robot", "content": cur_response, "avatar": robot_avator})
         torch.cuda.empty_cache()
 
 
