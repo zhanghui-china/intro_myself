@@ -14,6 +14,7 @@ from modelscope import AutoModelForCausalLM, AutoTokenizer
 
 import streamlit as st
 import torch
+import re  
 #from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.utils import logging
 
@@ -94,6 +95,13 @@ def main():
 
     # Accept user input
     if prompt := st.chat_input("What is up?"):
+
+        if re.search(r'(做法|怎么做|菜谱)', prompt):  
+            # 如果输入包含相关关键词，则继续执行后续代码  
+            # ... [其他代码不变]  
+        else:  
+            st.warning("请输入菜名或者想做什么吃的，我会告诉您菜怎么做。")
+
         # Display user message in chat message container
         with st.chat_message("user", avatar=user_avator):
             st.markdown(prompt)
