@@ -112,7 +112,7 @@ def main():
             with st.chat_message("robot", avatar=robot_avator):
                 st.markdown("我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做，我会告诉你具体的做法。")
             # Add robot response to chat history
-            st.session_state.messages.append({"role": "robot", "content": "我是一个菜谱小助手，您可以问我什么菜怎么做，我会告诉你具体的做法", "avatar": robot_avator})
+            st.session_state.messages.append({"role": "robot", "content": "我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做，我会告诉你具体的做法。", "avatar": robot_avator})
         else:
             # Generate robot response
             with st.chat_message("robot", avatar=robot_avator):
