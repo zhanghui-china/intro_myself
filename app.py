@@ -95,31 +95,42 @@ def main():
 
     # Accept user input
     if prompt := st.chat_input("What is up?"):
-
-        
+        # Check if the user input contains certain keywords
+        keywords = ["怎么做", "做法", "菜谱"]
+        contains_keywords = any(keyword in prompt for keyword in keywords)
 
         # Display user message in chat message container
         with st.chat_message("user", avatar=user_avator):
             st.markdown(prompt)
         real_prompt = combine_history(prompt)
+
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt, "avatar": user_avator})
 
-        with st.chat_message("robot", avatar=robot_avator):
-            message_placeholder = st.empty()
-            for cur_response in generate_interactive(
-                model=model,
-                tokenizer=tokenizer,
-                prompt=real_prompt,
-                additional_eos_token_id=103028,
-                **asdict(generation_config),
-            ):
-                # Display robot response in chat message container
-                message_placeholder.markdown(cur_response + "▌")
-            message_placeholder.markdown(cur_response)
-        # Add robot response to chat history
-        st.session_state.messages.append({"role": "robot", "content": cur_response, "avatar": robot_avator})
-        torch.cuda.empty_cache()
+        # If keywords are not present, display a prompt message immediately
+        if not contains_keywords:
+            with st.chat_message("robot", avatar=robot_avator):
+                st.markdown("我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做，我会告诉你具体的做法。")
+            # Add robot response to chat history
+            st.session_state.messages.append({"role": "robot", "content": "我是一个菜谱小助手，您可以问我什么菜怎么做，我会告诉你具体的做法", "avatar": robot_avator})
+        else:
+            # Generate robot response
+            with st.chat_message("robot", avatar=robot_avator):
+                message_placeholder = st.empty()
+                for cur_response in generate_interactive(
+                    model=model,
+                    tokenizer=tokenizer,
+                    prompt=real_prompt,
+                    additional_eos_token_id=103028,
+                    **asdict(generation_config),
+                ):
+                    # Display robot response in chat message container
+                    message_placeholder.markdown(cur_response + "▌")
+                message_placeholder.markdown(cur_response)
+            # Add robot response to chat history
+            st.session_state.messages.append({"role": "robot", "content": cur_response, "avatar": robot_avator})
+            torch.cuda.empty_cache()
+
 
 
 if __name__ == "__main__":
