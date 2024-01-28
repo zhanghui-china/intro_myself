@@ -30,22 +30,23 @@ def on_btn_click():
 @st.cache_resource
 def load_model():
     model = (
-        AutoModelForCausalLM.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen", trust_remote_code=True)
+        AutoModelForCausalLM.from_pretrained("zhanghuiATchina/zhanghuiATchina/zhangxiaobai_shishen_full", trust_remote_code=True)
         .to(torch.bfloat16)
         .cuda()
     )
-    tokenizer = AutoTokenizer.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen", trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained("zhanghuiATchina/zhanghuiATchina/zhangxiaobai_shishen_full", trust_remote_code=True)
     return model, tokenizer
 
 
 def prepare_generation_config():
     with st.sidebar:
         max_length = st.slider("Max Length", min_value=32, max_value=2048, value=2048)
-        top_p = st.slider("Top P", 0.0, 1.0, 0.8, step=0.01)
-        temperature = st.slider("Temperature", 0.0, 1.0, 0.7, step=0.01)
+        #top_p = st.slider("Top P", 0.0, 1.0, 0.8, step=0.01)
+        #temperature = st.slider("Temperature", 0.0, 1.0, 0.7, step=0.01)
         st.button("Clear Chat History", on_click=on_btn_click)
 
-    generation_config = GenerationConfig(max_length=max_length, top_p=top_p, temperature=temperature)
+    #generation_config = GenerationConfig(max_length=max_length, top_p=top_p, temperature=temperature)
+    generation_config = GenerationConfig(max_length=max_length, top_p=0.8, temperature=0.8, repetition_penalty=1.002)
 
     return generation_config
 
@@ -57,7 +58,7 @@ cur_query_prompt = "<|User|>:{user}<eoh>\n<|Bot|>:"
 
 def combine_history(prompt):
     messages = st.session_state.messages
-    total_prompt = ""
+    total_prompt = "您是一个厨师，熟悉很多菜的制作方法。用户会问你哪些菜怎么制作，您可以用自己的专业知识答复他。回答的内容一般包含两块：这道菜需要哪些食材，这道菜具体是怎么做出来>的。如果用户没有问菜谱相关的问题，就提醒他对菜谱的相关问题进行提问。"
     for message in messages:
         cur_content = message["content"]
         if message["role"] == "user":
