@@ -111,9 +111,9 @@ def main():
         # If keywords are not present, display a prompt message immediately
         if not contains_keywords:
             with st.chat_message("robot", avatar=robot_avator):
-                st.markdown("我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做———比如说酸菜鱼怎么做？，我会告诉你具体的做法。")
+                st.markdown("我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做———比如酸菜鱼怎么做？，我会告诉你具体的做法。")
             # Add robot response to chat history
-            st.session_state.messages.append({"role": "robot", "content": "我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做，我会告诉你具体的做法。", "avatar": robot_avator})
+            st.session_state.messages.append({"role": "robot", "content": "我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做———比如酸菜鱼怎么做？，我会告诉你具体的做法。", "avatar": robot_avator})
         else:
             # Generate robot response
             with st.chat_message("robot", avatar=robot_avator):
