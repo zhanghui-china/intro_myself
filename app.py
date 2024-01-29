@@ -58,7 +58,7 @@ cur_query_prompt = "<|User|>:{user}<eoh>\n<|Bot|>:"
 
 def combine_history(prompt):
     messages = st.session_state.messages
-    total_prompt = "您是一个厨师，熟悉很多菜的制作方法。用户会问你哪些菜怎么制作，您可以用自己的专业知识答复他。回答的内容一般包含两块：这道菜需要哪些食材，这道菜具体是怎么做出来>的。如果用户没有问菜谱相关的问题，就提醒他对菜谱的相关问题进行提问。"
+    total_prompt = "您是一个厨师，熟悉很多菜的制作方法。用户会问你哪些菜怎么制作，您可以用自己的专业知识答复他。回答的内容一般包含两块：这道菜需要哪些食材，这道菜具体是怎么做出来的。如果用户没有问菜谱相关的问题，就提醒他对菜谱的相关问题进行提问。"
     for message in messages:
         cur_content = message["content"]
         if message["role"] == "user":
@@ -111,7 +111,7 @@ def main():
         # If keywords are not present, display a prompt message immediately
         if not contains_keywords:
             with st.chat_message("robot", avatar=robot_avator):
-                st.markdown("我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做，我会告诉你具体的做法。")
+                st.markdown("我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做———比如说酸菜鱼怎么做？，我会告诉你具体的做法。")
             # Add robot response to chat history
             st.session_state.messages.append({"role": "robot", "content": "我是食神周星星的唯一传人张小白，我什么菜都会做，包括黑暗料理，您可以问我什么菜怎么做，我会告诉你具体的做法。", "avatar": robot_avator})
         else:
