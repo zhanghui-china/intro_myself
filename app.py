@@ -46,7 +46,8 @@ def prepare_generation_config():
         st.button("Clear Chat History", on_click=on_btn_click)
 
     #generation_config = GenerationConfig(max_length=max_length, top_p=top_p, temperature=temperature)
-    generation_config = GenerationConfig(max_length=max_length, top_p=0.8, temperature=0.8, repetition_penalty=1.002)
+    #generation_config = GenerationConfig(max_length=max_length, top_p=0.8, temperature=0.8, repetition_penalty=1.002)
+    generation_config = GenerationConfig(max_length=max_length, top_p=0.8, temperature=0.8, repetition_penalty=1.05)
 
     return generation_config
 
