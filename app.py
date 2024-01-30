@@ -128,6 +128,7 @@ def main():
                     **asdict(generation_config),
                 ):
                     # Display robot response in chat message container
+                    cur_response = cur_response.replace('\\n', '\n')
                     message_placeholder.markdown(cur_response + "▌")
                 message_placeholder.markdown(cur_response)
             # Add robot response to chat history
