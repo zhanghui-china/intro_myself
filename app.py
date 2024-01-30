@@ -30,11 +30,11 @@ def on_btn_click():
 @st.cache_resource
 def load_model():
     model = (
-        AutoModelForCausalLM.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen_full", trust_remote_code=True)
+        AutoModelForCausalLM.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen2_full", trust_remote_code=True)
         .to(torch.bfloat16)
         .cuda()
     )
-    tokenizer = AutoTokenizer.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen_full", trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained("zhanghuiATchina/zhangxiaobai_shishen2_full", trust_remote_code=True)
     return model, tokenizer
 
 
@@ -81,7 +81,7 @@ def main():
     user_avator = "images/user.png"
     robot_avator = "images/robot.png"
 
-    st.title("食神——菜谱小助手 by 张小白")
+    st.title("食神2——菜谱小助手 by 张小白")
 
     generation_config = prepare_generation_config()
 
@@ -122,7 +122,8 @@ def main():
                     model=model,
                     tokenizer=tokenizer,
                     prompt=real_prompt,
-                    additional_eos_token_id=103028,
+                    # additional_eos_token_id=103028,
+                    additional_eos_token_id=92542,
                     **asdict(generation_config),
                 ):
                     # Display robot response in chat message container
