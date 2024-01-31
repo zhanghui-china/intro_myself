@@ -132,8 +132,6 @@ model = model.eval()
 messages = []
 generation_config = GenerationConfig(max_length=max_length, top_p=0.8, temperature=0.8, repetition_penalty=1.002)
 
-print("=============Welcome to ShiShen chatbot, type 'exit' to exit.=============")
-
 response, history = model.chat(tokenizer, "你好", history=[])
 print(response)
 response, history = model.chat(tokenizer, "酸菜鱼怎么做", history=history)
