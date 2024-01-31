@@ -2,9 +2,8 @@
   <img src="https://github.com/zhanghui-china/intro_myself/blob/main/images/shishen.jpg" width="600"/>
   <br /><br />
 ![GitHub Repo stars](https://img.shields.io/github/stars/zhanghui-china/intro_myself?style=social)
-![license](https://img.shields.io/github/license/zhanghui-china/intro_myself.svg)
-[![issue resolution](https://img.shields.io/github/issues-closed-raw/zhanghui-china/intro_myself)](https://github.com/zhanghui-china/intro_myself)
-[![open issues](https://img.shields.io/github/issues-raw/zhanghui-china/intro_myself)](https://github.com/LZHgrla/xtuner-template/issues)
+![issue resolution](https://img.shields.io/github/issues-closed-raw/zhanghui-china/intro_myself)](https://github.com/zhanghui-china/intro_myself)
+![open issues](https://img.shields.io/github/issues-raw/zhanghui-china/intro_myself)](https://github.com/LZHgrla/xtuner-template/issues)
 
 
 
