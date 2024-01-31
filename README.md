@@ -1,11 +1,6 @@
 <div align="center">
   <img src="https://github.com/zhanghui-china/intro_myself/blob/main/images/shishen.jpg" width="600"/>
   <br /><br />
-![GitHub Repo stars](https://img.shields.io/github/stars/zhanghui-china/intro_myself?style=social)
-![issue resolution](https://img.shields.io/github/issues-closed-raw/zhanghui-china/intro_myself)](https://github.com/zhanghui-china/intro_myself)
-![open issues](https://img.shields.io/github/issues-raw/zhanghui-china/intro_myself)](https://github.com/LZHgrla/xtuner-template/issues)
-
-
 
 🔍 探索我们的模型：
 [![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🤖%20ModelScope)](https://www.modelscope.cn/models/zhanghuiATchina/zhangxiaobai_shishen2_full/summary)
