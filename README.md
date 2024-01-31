@@ -1,11 +1,8 @@
 <div align="center">
   <img src="https://github.com/zhanghui-china/intro_myself/blob/main/images/shishen.jpg" width="600"/>
   <br /><br />
-![license](https://img.shields.io/github/license/zhanghui-china/intro_myself.svg)
-[![issue resolution](https://img.shields.io/github/issues-closed-raw/zhanghui-china/intro_myself)](https://img.shields.io/github/issues-raw/zhanghui-china/intro_myself)
-[![open issues](https://img.shields.io/github/issues-raw/zhanghui-china/intro_myself)](https://github.com/zhanghui-china/intro_myself/issues)
 
-
+![license](https://img.shields.io/github/license/zhanghui-china/intro_myself.svg)  [![issue resolution](https://img.shields.io/github/issues-closed-raw/zhanghui-china/intro_myself)](https://github.com/zhanghui-china/intro_myself/issues)   [![open issues](https://img.shields.io/github/issues-raw/zhanghui-china/intro_myself)](https://github.com/zhanghui-china/intro_myself/issues)
 
 🔍 探索我们的模型：
 [![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🤖%20ModelScope)](https://www.modelscope.cn/models/zhanghuiATchina/zhangxiaobai_shishen2_full/summary)
@@ -27,8 +24,8 @@
 
 ## 更新说明
 
-- [2024.1] 基于二代150万菜谱微调的模型和APP发布。
-- [2024.1] 基于一代150万菜谱微调的模型和APP发布。
+- [2024.1.30] 基于二代150万菜谱微调的模型和APP发布。（使用InternStudio+A100 1/4X2 40G显存微调，1.25 15:46-1.30 12:25，微调历时4天20小时39分钟）
+- [2024.1.28] 基于一代150万菜谱微调的模型和APP发布。（使用WSL+Ubuntu22.04+RTX4090 24G显存微调，1.26 18:40-1.28 13:46历时1天19小时6分钟）。
 
 
 
@@ -52,7 +49,7 @@
    cd ./intro_myself
    ```
 
-3. 安装依赖库：
+3. 安装Pytorch和依赖库：
 
    ```shell
    conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
