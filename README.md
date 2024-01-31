@@ -101,17 +101,14 @@ xtuner chat ${SAVE_PATH} [optional arguments]
 - `--repetition-penalty`: 对于二代模型，建议为1.002，对于一代模型可不填。
 - 更多信息，请执行 `xtuner chat -h` 查看。
 
-
-
 ## 演示
 
 Demo 访问地址：https://openxlab.org.cn/apps/detail/zhanghui-china/nlp_shishen
 
 
 
-## 模型
 
- 
+## 模型
 
 ```shell
 import torch
@@ -127,7 +124,6 @@ model = model.eval()
 messages = []
 generation_config = GenerationConfig(max_length=max_length, top_p=0.8, temperature=0.8, repetition_penalty=1.002)
 
-
 print("=============Welcome to ShiShen chatbot, type 'exit' to exit.=============")
 
 response, history = model.chat(tokenizer, "你好", history=[])
@@ -138,9 +134,19 @@ print(response)
 
 
 
-## 作者
+
+## 实践文档
+
+[一代实践](https://zhuanlan.zhihu.com/p/678019309)
+[二代实践](https://zhuanlan.zhihu.com/p/678376843)
+
+
+
+
+## 关于作者
 
 项目作者：张小白，字大白，优质回复家。斜杠青年，精力充沛。简称钢筋。 [博客地址](https://www.zhihu.com/people/zhanghui_china)
+
 
 
 
