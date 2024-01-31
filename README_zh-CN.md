@@ -13,6 +13,7 @@
 [![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🤖%20ModelScope)](https://www.modelscope.cn/models/zhanghuiATchina/zhangxiaobai_shishen2_full/summary)
 
 
+</p>
 
 ## 介绍
 
