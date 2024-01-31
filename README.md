@@ -2,6 +2,13 @@
   <img src="https://github.com/zhanghui-china/intro_myself/blob/main/images/shishen.jpg" width="600"/>
   <br /><br />
 
+![license](https://img.shields.io/github/license/zhanghui-china/intro_myself.svg)
+[![issue resolution](https://img.shields.io/github/issues-closed-raw/LZHgrla/xtuner-template)](https://github.com/zhanghui-china/intro_myself/issues)
+[![open issues](https://img.shields.io/github/issues-raw/LZHgrla/xtuner-template)](https://github.com/zhanghui-china/intro_myself/issues)
+
+
+
+
 🔍 探索我们的模型：
 [![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🤖%20ModelScope)](https://www.modelscope.cn/models/zhanghuiATchina/zhangxiaobai_shishen2_full/summary)
 
@@ -50,6 +57,7 @@
 3. 安装依赖库：
 
    ```shell
+   conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
    pip install -r requirements.txt
    ```
 
@@ -76,7 +84,7 @@
    xtuner convert pth_to_hf ${YOUR_CONFIG} ${PTH} ${LoRA_PATH}
    ```
 
-   3.将LoRA合并入 HuggingFace 模型：
+   3.将LoRA模型合并入 HuggingFace 模型：
 
 ```shell
 xtuner convert merge ${PTH} ${LoRA_PATH} ${SAVE_PATH}
@@ -141,6 +149,14 @@ print(response)
 2.目前对提问采用简单的过滤方式，如果用户提问的关键词中没有“怎么做”、"做法"、“食谱”等字样，就要求用户提供相关的指令，否则一直会提示错误。今后可考虑采用多轮对话来获取明确的菜名信息（如先问想吃什么菜——比如川菜或者东北菜，再问什么口味——比如偏甜还是偏辣等等），以便提供精确的菜谱信息。 <br />  
 
 3.今后会考虑对接文生图的应用，在生成菜谱的制作过程之后，同时生成一副该菜的照片，文图并茂展示信息。  <br />
+
+
+
+4.看看能不能将提示符工程应用到项目里面去。这次虽然写了prompt，但是感觉相关的交互结果并没有严格按照prompt走。 <br />
+
+
+
+
 
 
 ## 实践文档
