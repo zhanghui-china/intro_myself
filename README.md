@@ -1,7 +1,6 @@
 <div align="center">
   <img src="https://github.com/zhanghui-china/intro_myself/blob/main/images/shishen.jpg" width="600"/>
   <br /><br />
-
 ![license](https://img.shields.io/github/license/zhanghui-china/intro_myself.svg)
 [![issue resolution](https://img.shields.io/github/issues-closed-raw/LZHgrla/xtuner-template)](https://github.com/zhanghui-china/intro_myself/issues)
 [![open issues](https://img.shields.io/github/issues-raw/LZHgrla/xtuner-template)](https://github.com/zhanghui-china/intro_myself/issues)
@@ -113,7 +112,12 @@ xtuner chat ${SAVE_PATH} [optional arguments]
 
 Demo 访问地址：https://openxlab.org.cn/apps/detail/zhanghui-china/nlp_shishen
 
-
+<div align="center">
+  <img src="https://github.com/zhanghui-china/intro_myself/blob/main/images/answer001.jpg" width="600"/>
+  <br />
+  <img src="https://github.com/zhanghui-china/intro_myself/blob/main/images/answer002.jpg" width="600"/>
+  <br />
+</div>
 
 
 ## 模型
