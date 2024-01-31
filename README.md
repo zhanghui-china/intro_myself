@@ -146,4 +146,4 @@ print(response)
 
 ## 开源许可证
 
-该项目采用 [Apache License 2.0 开源许可证](LICENSE)。
+该项目采用 [Apache License 2.0 开源许可证](LICENSE.txt)。
