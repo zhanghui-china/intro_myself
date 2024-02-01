@@ -82,7 +82,7 @@
    3.将LoRA模型合并入 HuggingFace 模型：
 
 ```shell
-xtuner convert merge ${PTH} ${LoRA_PATH} ${SAVE_PATH}
+xtuner convert merge ${Base_PATH} ${LoRA_PATH} ${SAVE_PATH}
 ```
 
 
@@ -163,6 +163,7 @@ print(response)
 [一代实践](https://zhuanlan.zhihu.com/p/678019309)  <br />
 [二代实践](https://zhuanlan.zhihu.com/p/678376843)  <br />
 
+[实践视频](https://www.bilibili.com/video/BV1Ut421W7Qg)  <br />
 
 
 
